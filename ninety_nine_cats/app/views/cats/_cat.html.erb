@@ -1,0 +1,30 @@
+<table>
+  <thead>
+    <tr>
+      <th colspan="2"><a href="<%=cat_url(cat)%>"><%= cat.name %> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="column">Birth Date</td>
+      <td class="col_val"><%= cat.birth_date %></td>
+    </tr>
+    <tr>
+      <td class="column"> Pronoun </td>
+      <td class="col_val"><%= cat.sex %></td>
+    </tr>
+    <tr>
+      <td class="column"> Color </td>
+      <td class="col_val"><%= cat.color %></td>
+    </tr>
+    <tr>
+      <td class="column"> Description </td>
+      <td class="col_val"><%= cat.description %></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="2">This the cat</td>
+    </tr>
+  </tfoot>
+</table>

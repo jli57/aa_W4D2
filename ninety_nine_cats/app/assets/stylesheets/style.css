@@ -1,0 +1,34 @@
+table {
+  border: 1px solid black;
+  width: 300px;
+}
+
+tbody * {
+  border: 1px solid black;
+}
+
+th {
+  text-align: left;
+  vertical-align: bottom;
+}
+
+th, td {
+  padding: 5px;
+}
+
+tr {
+  width: 200px;
+}
+
+tfoot, thead * {
+  text-align: center;
+}
+
+.column {
+  font-weight: bold;
+  width: 30%;
+}
+
+.col_val {
+  width: 70%;
+}
