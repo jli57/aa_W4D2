@@ -1,24 +1,27 @@
+body {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  text-align: center;
+  align-items: center;
+}
+
 table {
   border: 1px solid black;
-  width: 300px;
+  width: 50%;
+  text-align: left;
 }
 
-tbody * {
+tbody > *  {
   border: 1px solid black;
 }
 
-th {
-  text-align: left;
-  vertical-align: bottom;
-}
 
 th, td {
   padding: 5px;
 }
 
-tr {
-  width: 200px;
-}
 
 tfoot, thead * {
   text-align: center;
@@ -31,4 +34,9 @@ tfoot, thead * {
 
 .col_val {
   width: 70%;
+}
+
+#description {
+  width: 200px;
+  height: 100px;
 }

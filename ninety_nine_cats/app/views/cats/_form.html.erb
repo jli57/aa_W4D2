@@ -1,0 +1,84 @@
+<% if cat.persisted? %>
+  <% action_val = cat_url(cat) %>
+  <% button_val = "Edit this kat" %>
+<% else %>
+  <% action_val = cats_url %>
+  <% button_val = "Create this kat" %>
+<% end %>
+
+<form class="" action="<%=action_val%>" method="post">
+  <% if cat.persisted? %>
+    <input type="hidden" name="_method" value="patch" >
+  <% end %>
+  <table>
+    <tbody>
+      <tr>
+        <th>
+          <label for="name">Name</label>
+        </th>
+        <th>
+          <input type="text" id="name" name="cat[name]" value="<%= cat.name %>">
+        </th>
+      </tr>
+      <tr>
+        <td class="column">
+          <label for="birth_date"> Birth Date </label>
+        </td>
+        <td class="col_val">
+          <input type="date" id="birth_date" name="cat[birth_date]" value="<%= cat.birth_date %>">
+        </td>
+      </tr>
+      <tr>
+        <td class="column">
+          <label for="pronoun"> Pronoun </label>
+        </td>
+        <td class="col_val">
+
+          <input type="radio" id="pronoun" name="cat[sex]" value="M"
+            <%= cat.sex == "M" ? "checked" : "" %>
+          >Male
+          <input type="radio" id="pronoun" name="cat[sex]" value="F"
+            <%= cat.sex == "F" ? "checked" : "" %>
+          >Female
+          <input type="radio" id="pronoun" name="cat[sex]" value="O"
+            <%= cat.sex == "O" ? "checked" : "" %>
+          >Other
+        </td>
+      </tr>
+      <tr>
+        <td class="column">
+          <label for="color">Color</label>
+        </td>
+        <td class="col_val">
+          <select class="" id="color" name="cat[color]">
+            <option value="" <%= cat.color == "Blank" ? "selected" : "" %> >-- select a color --</option>
+            <option value="Black" <%= cat.color == "Black" ? "selected" : "" %> >Black</option>
+            <option value="White" <%= cat.color == "White" ? "selected" : "" %> >White</option>
+            <option value="Gray" <%= cat.color == "Gray" ? "selected" : "" %> >Gray</option>
+            <option value="Orange" <%= cat.color == "Orange" ? "selected" : "" %> >Orange</option>
+            <option value="Blue" <%= cat.color == "Blue" ? "selected" : "" %> >Blue</option>
+            <option value="Green" <%= cat.color == "Green" ? "selected" : "" %> >Green</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="column">
+          <label for="description">
+            Description
+          </label>
+        </td>
+        <td class="col_val">
+          <input type="textarea" id="description" name="cat[description]" value="<%= cat.description %>">
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2">
+          <input type="submit" name="submit_button" value="<%=button_val%>">
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+
+</form>

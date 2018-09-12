@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th colspan="2"><a href="<%=cat_rental_request_url(cat_rental_request)%>"><%= cat_rental_request.cat_id %> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="column">Start Date</td>
+      <td class="col_val"><%= cat_rental_request.start_date %></td>
+    </tr>
+    <tr>
+      <td class="column">End Date</td>
+      <td class="col_val"><%= cat_rental_request.end_date %></td>
+    </tr>
+    <tr>
+      <td class="column">Status </td>
+      <td class="col_val"><%= cat_rental_request.status %></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="2">
+        <a href="<%=edit_cat_rental_request_url(cat_rental_request)%>">Edit this kat request!</a>
+      </td>
+    </tr>
+  </tfoot>
+</table>

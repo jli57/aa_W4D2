@@ -22,4 +22,5 @@ class Cat < ApplicationRecord
     ((Date.today- birth_date).to_f/365).to_i
   end
 
+  has_many :rental_requests, foreign_key: :cat_id, class_name: :CatRentalRequest
 end
